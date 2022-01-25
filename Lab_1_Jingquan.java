@@ -1,39 +1,31 @@
-import java.io.IOException;
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
+import java.util.Scanner;
 
 class Lab_1_Jingquan {
-    public static void main(String[] args)
-        throws IOException {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
 
-        BufferedReader reader = new BufferedReader(
-            new InputStreamReader(System.in));
-        
         System.out.println("Question 2a Output");
-        Example1.main(args);
+        System.out.println("Hello, I am Jingquan!");   
         System.out.println("\n");
 
         System.out.println("Question 2b Output");
         System.out.println("Input Module Code");
-        String[] input = {reader.readLine()};
-        Example3.main(input);
+        String[] userinput = {input.nextLine()};
+        classify(userinput[0]);
         System.out.println("\n");
 
         System.out.println("Question 2c Output");
-        Example4.main(args);
+        for (int i = 102; i >= 66; i = i - 1) {
+            if (i % 2 == 0) {
+                continue;
+            }
+            System.out.print(i + "\n");
+        }
         System.out.println("\n");
+        input.close();
     }
-}
 
-class Example1 {
-    public static void main(String[] args) {
-        System.out.println("Hello, I am Jingquan!");
-    }
-}
-
-class Example3 {
-    public static void main(String[] args) {
-        String module = args[0];
+    public static void classify(String module) {
         switch (module) {
             case "CSC1006":
                 System.out.println("Mathematics 2");
@@ -59,17 +51,6 @@ class Example3 {
                 System.out.println("InvalidCode");
                 break;
         }
-
     }
-}
 
-class Example4 {
-    public static void main(String[] args) {
-        for (int i = 102; i >= 66; i = i - 1) {
-            if (i % 2 == 0) {
-                continue;
-            }
-            System.out.print(i + "\n");
-        }
-    }
 }
